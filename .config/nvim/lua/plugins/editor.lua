@@ -22,4 +22,24 @@ return {
       vim.keymap.set({ "n", "o", "x" }, "ge", "<cmd>lua require('spider').motion('ge')<CR>", { desc = "Spider-ge" })
     end,
   },
+  {
+    "folke/flash.nvim",
+    opts = {
+      modes = {
+        search = {
+          enabled = false,
+        },
+      },
+    },
+    keys = {
+      {
+        "<c-s>",
+        mode = { "c" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
+    },
+  },
 }
