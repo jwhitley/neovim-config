@@ -51,4 +51,19 @@ return {
       },
     },
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "jwhitley/telescope-vcsh.nvim",
+      -- dir = "/Users/whitley/src/nvim/telescope-vcsh.nvim",
+      -- name = "telescope-vcsh.nvim",
+      event = "VeryLazy",
+      config = function()
+        require("telescope").load_extension("vcsh")
+      end,
+      keys = {
+        { "<leader>v", "<cmd>Telescope vcsh<CR>", desc = "Find Files in vcsh" },
+      },
+    },
+  },
 }
