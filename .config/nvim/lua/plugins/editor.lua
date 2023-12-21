@@ -8,6 +8,15 @@ return {
           always_show = { ".config" },
         },
       },
+      window = {
+        mappings = {
+          ["m"] = {
+            "move",
+            config = { show_path = "relative" },
+          },
+          ["Z"] = "expand_all_nodes",
+        },
+      },
     },
   },
   {
