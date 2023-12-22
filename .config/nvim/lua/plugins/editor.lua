@@ -65,5 +65,8 @@ return {
         { "<leader>v", "<cmd>Telescope vcsh<CR>", desc = "Find Files in vcsh" },
       },
     },
+    keys = {
+      { "<leader><space>", false },
+    },
   },
 }
