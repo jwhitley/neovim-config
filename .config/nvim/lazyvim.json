@@ -4,6 +4,8 @@
     "lazyvim.plugins.extras.editor.navic",
     "lazyvim.plugins.extras.editor.symbols-outline",
     "lazyvim.plugins.extras.lang.go",
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lsp.none-ls",
     "lazyvim.plugins.extras.vscode"
   ],
   "news": {
