@@ -66,6 +66,8 @@ return {
       },
     },
     keys = {
+      -- disable this binding so my customized version
+      -- in config/keymaps.lua takes effect
       { "<leader><space>", false },
     },
   },
