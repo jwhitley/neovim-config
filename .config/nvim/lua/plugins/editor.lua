@@ -71,4 +71,17 @@ return {
       { "<leader><space>", false },
     },
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      textobjects = {
+        select = {
+          keymaps = {
+            ["ia"] = "@parameter.inner",
+            ["oa"] = "@parameter.outer",
+          },
+        },
+      },
+    },
+  },
 }
