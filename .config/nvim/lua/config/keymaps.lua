@@ -10,3 +10,4 @@ vim.keymap.set("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", { noremap =
 vim.keymap.set("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader><space>", require("mux").mux, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>n", require("nvim-navbuddy").open, { noremap = true, silent = true })
