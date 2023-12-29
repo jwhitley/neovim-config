@@ -1,16 +1,19 @@
 return {
   {
-    -- "lunarvim/synthwave84.nvim",
     "ellisonleao/gruvbox.nvim",
-    lazy = false,
-    priority = 1000,
     name = "gruvbox",
   },
-  -- Configure LazyVim to load flexoki
+  {
+    -- "lunarvim/synthwave84.nvim",
+    "rebelot/kanagawa.nvim",
+    name = "kanagawa",
+    lazy = false,
+    priority = 1000,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "kanagawa",
     },
   },
 }
