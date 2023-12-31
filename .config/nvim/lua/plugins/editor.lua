@@ -61,9 +61,6 @@ return {
       config = function()
         require("telescope").load_extension("vcsh")
       end,
-      keys = {
-        { "<leader>v", "<cmd>Telescope vcsh<CR>", desc = "Find Files in vcsh" },
-      },
     },
     keys = {
       -- disable this binding so my customized version
@@ -90,5 +87,8 @@ return {
         },
       },
     },
+  },
+  {
+    "jwhitley/vcsh.nvim",
   },
 }
