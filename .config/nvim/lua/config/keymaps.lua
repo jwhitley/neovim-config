@@ -10,4 +10,7 @@ vim.keymap.set("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", { noremap =
 vim.keymap.set("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader><space>", require("mux").mux, { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>n", require("nvim-navbuddy").open, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>n", require("nvim-navbuddy").open, { desc = "Open Navbuddy", noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>ve", require("vcsh").vcshEnterSelect, { desc = "Enter a vcsh repo", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>vx", require("vcsh").vcshExit, { desc = "Exit vcsh repo", noremap = true, silent = true })
