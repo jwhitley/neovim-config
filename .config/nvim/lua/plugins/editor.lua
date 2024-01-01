@@ -32,24 +32,22 @@ return {
     end,
   },
   {
+    -- disable mini.surround, which uses a weird non-textobject model ...
+    "echasnovski/mini.surround",
+    enabled = false,
+  },
+  {
+    -- ... instead use nvim-surround which is a textobject based surround plugin
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup()
+    end,
+  },
+  {
     "folke/flash.nvim",
-    opts = {
-      modes = {
-        search = {
-          enabled = false,
-        },
-      },
-    },
-    keys = {
-      {
-        "<c-s>",
-        mode = { "c" },
-        function()
-          require("flash").toggle()
-        end,
-        desc = "Toggle Flash Search",
-      },
-    },
+    enabled = false,
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -70,14 +68,30 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "RRethy/nvim-treesitter-textsubjects",
+      config = function()
+        require("nvim-treesitter.configs").setup({
+          textsubjects = {
+            enable = true,
+            prev_selection = ",", -- (Optional) keymap to select the previous selection
+            keymaps = {
+              ["."] = "textsubjects-smart",
+              [";"] = "textsubjects-container-outer",
+              ["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (classes, functions, etc.)" },
+            },
+          },
+        })
+      end,
+    },
     opts = {
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          node_incremental = ".",
-          node_decremental = ",",
-        },
-      },
+      -- incremental_selection = {
+      --   enable = true,
+      --   keymaps = {
+      --     node_incremental = ".",
+      --     node_decremental = ",",
+      --   },
+      -- },
       textobjects = {
         select = {
           keymaps = {

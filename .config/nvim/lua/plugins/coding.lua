@@ -26,18 +26,4 @@ return {
       },
     },
   },
-  {
-    -- disable mini.surround, which uses a weird non-textobject model ...
-    "echasnovski/mini.surround",
-    enabled = false,
-  },
-  {
-    -- ... instead use nvim-surround which is a textobject based surround plugin
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup()
-    end,
-  },
 }
