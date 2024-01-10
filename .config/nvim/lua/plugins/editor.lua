@@ -1,4 +1,8 @@
 return {
+  {
+    "NMAC427/guess-indent.nvim",
+    lazy = false,
+  },
   -- file explorer
   {
     "nvim-neo-tree/neo-tree.nvim",
