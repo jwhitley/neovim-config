@@ -21,6 +21,15 @@ return {
     },
     opts = {
       servers = {
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = {
+                ST1001 = false,
+              },
+            },
+          },
+        },
         lua_ls = {
           settings = {
             Lua = {
