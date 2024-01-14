@@ -1,6 +1,29 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
+
+vim.keymap.set("i", "<tab>", function()
+  local line = vim.api.nvim_get_current_line()
+  if string.match(line, "%g") == nil then
+    -- when the line contains only spaces (or is empty), jump to the
+    -- current indent position
+    return "<C-F>"
+  elseif vim.fn.getpos(".")[3] < string.len(string.match(line, "^%s+")) then
+    -- when there is non-space content on the line, but we're inside the
+    -- indent, then reindent the line and jump to the first non-space
+    -- position
+    return "<Cmd>normal ==^<CR>"
+  end
+end, { noremap = true, expr = true })
+vim.keymap.set("n", "i", function()
+  return string.match(vim.api.nvim_get_current_line(), "%g") == nil and "cc" or "i"
+end, { expr = true })
+
+-- keymaps below this line are disabled under VSCode
+if vim.g.vscode then
+  return
+end
+
 local wk = require("which-key")
 
 wk.register({
