@@ -92,4 +92,34 @@ return {
   {
     "jwhitley/vcsh.nvim",
   },
+  {
+    "gbprod/yanky.nvim",
+    opts = function()
+      local utils = require("yanky.utils")
+      local mapping = require("yanky.telescope.mapping")
+      return {
+        picker = {
+          telescope = {
+            -- yanky's telescope picker mapings conflict with my use of <C-k> for "prev_selection"
+            use_default_mappings = false,
+            mappings = {
+              default = mapping.put("p"),
+              i = {
+                ["<c-n>"] = mapping.put("p"),
+                ["<c-p>"] = mapping.put("P"),
+                ["<c-x>"] = mapping.delete(),
+                ["<c-r>"] = mapping.set_register(utils.get_default_register()),
+              },
+              n = {
+                p = mapping.put("p"),
+                P = mapping.put("P"),
+                d = mapping.delete(),
+                r = mapping.set_register(utils.get_default_register()),
+              },
+            },
+          },
+        },
+      }
+    end,
+  },
 }
