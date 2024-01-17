@@ -8,6 +8,13 @@ local del = vim.keymap.del
 -- Remove this binding, since I set my own lazygit binding below
 del("n", "<leader>gG")
 
+-- Remove these bindings as they're FAR too easy to accidentally invoke
+-- with a stray <ESC>, since A-j == <ESC>j etc
+del({ "n", "i", "v" }, "<A-j>")
+del({ "n", "i", "v" }, "<A-k>")
+
+-- When entering insert via 'i', reindent the current line if it has no
+-- non-space content
 set("n", "i", function()
   return string.match(vim.api.nvim_get_current_line(), "%g") == nil and "cc" or "i"
 end, { expr = true })
