@@ -27,6 +27,7 @@ return {
               analyses = {
                 fieldalignment = false,
                 ST1001 = false,
+                ST1006 = false,
                 unusedparams = false,
               },
             },
