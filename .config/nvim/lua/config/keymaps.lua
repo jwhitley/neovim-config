@@ -50,3 +50,5 @@ local lgTerm = function()
   Util.terminal({ "lazygit" }, { esc_esc = false, ctrl_hjkl = false })
 end
 set("n", "<leader>z", lgTerm, { desc = "Lazygit" })
+
+set("c", "%%", "<c-r>=v:lua.require'utils'.expandFileDir()<cr>", { noremap = true, silent = true })
