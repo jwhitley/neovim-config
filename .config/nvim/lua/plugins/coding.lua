@@ -1,5 +1,20 @@
 return {
   {
+    "rgroli/other.nvim",
+    keys = {
+      { "<leader>af", "<cmd>Other<cr>", desc = "Open alternative file" },
+      { "<leader>av", "<cmd>OtherVSplit<cr>", desc = "Open alternative file (vsplit)" },
+    },
+    opts = {
+      mappings = {
+        "golang",
+      },
+    },
+    config = function(_, opts)
+      require("other-nvim").setup(opts)
+    end,
+  },
+  {
     -- add options to mini.ai
     "echasnovski/mini.ai",
     opts = {
