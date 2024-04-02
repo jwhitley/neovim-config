@@ -50,5 +50,10 @@ return {
       end,
       desc = "Git Grep (at cursor)",
     },
+    {
+      "<leader>r",
+      "<cmd>Telescope resume<cr>",
+      desc = "Resume",
+    },
   },
 }
