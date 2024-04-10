@@ -36,11 +36,6 @@ return {
     end,
   },
   {
-    -- disable mini.surround, which uses a weird non-textobject model ...
-    "echasnovski/mini.surround",
-    enabled = false,
-  },
-  {
     -- ... instead use nvim-surround which is a textobject based surround plugin
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -48,10 +43,6 @@ return {
     config = function()
       require("nvim-surround").setup()
     end,
-  },
-  {
-    "folke/flash.nvim",
-    enabled = false,
   },
   {
     "jwhitley/vcsh.nvim",
@@ -85,5 +76,15 @@ return {
         },
       }
     end,
+  },
+  -- DISABLED DEFAULT LAZYVIM PLUGINS
+  {
+    "folke/flash.nvim",
+    enabled = false,
+  },
+  {
+    -- disable mini.surround, which uses a weird non-textobject model ...
+    "echasnovski/mini.surround",
+    enabled = false,
   },
 }
