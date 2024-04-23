@@ -10,6 +10,7 @@ return {
       filesystem = {
         filtered_items = {
           always_show = { ".config" },
+          hide_dotfiles = false,
         },
       },
       window = {
