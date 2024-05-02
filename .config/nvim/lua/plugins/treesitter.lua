@@ -1,9 +1,6 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    ensure_installed = {
-      "prisma",
-    },
     dependencies = {
       "RRethy/nvim-treesitter-textsubjects",
       config = function()
@@ -21,6 +18,10 @@ return {
       end,
     },
     opts = {
+      ensure_installed = {
+        "prisma",
+        "svelte",
+      },
       -- incremental_selection = {
       --   enable = true,
       --   keymaps = {
