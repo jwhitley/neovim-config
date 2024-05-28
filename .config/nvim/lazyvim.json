@@ -2,15 +2,17 @@
   "extras": [
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.navic",
-    "lazyvim.plugins.extras.editor.trouble-v3",
     "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.yaml",
     "lazyvim.plugins.extras.lsp.none-ls",
-    "lazyvim.plugins.extras.vscode"
+    "lazyvim.plugins.extras.ui.treesitter-context",
+    "lazyvim.plugins.extras.vscode",
+    "lazyvim.plugins.extras.editor.trouble-v3"
   ],
   "news": {
-    "NEWS.md": "3314"
+    "NEWS.md": "4964"
   },
-  "version": 3
+  "version": 5
 }
