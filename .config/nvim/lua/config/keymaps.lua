@@ -27,17 +27,14 @@ end
 local Util = require("lazyvim.util")
 local wk = require("which-key")
 
-wk.register({
-  ["<space>"] = { require("mux").mux, "Find files(mux)" },
-  n = { require("nvim-navbuddy").open, "Open Navbuddy" },
-  v = {
-    name = "vcsh",
-    e = { require("vcsh").vcshEnterSelect, "Enter a vcsh repo" },
-    s = { require("vcsh").vcshShow, "Show current vcsh repo" },
-    x = { require("vcsh").vcshExit, "Exit vcsh repo" },
-  },
-  z = {},
-}, { prefix = "<leader>" })
+wk.add({
+  { "<leader><space>", require("mux").mux, desc = "Find files(mux)" },
+  { "<leader>n", require("nvim-navbuddy").open, desc = "Open Navbuddy" },
+  { "<leader>v", group = "vcsh" },
+  { "<leader>ve", require("vcsh").vcshEnterSelect, desc = "Enter a vcsh repo" },
+  { "<leader>vs", require("vcsh").vcshShow, desc = "Show current vcsh repo" },
+  { "<leader>vx", require("vcsh").vcshExit, desc = "Exit vcsh repo" },
+})
 
 set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { noremap = true, silent = true })
 set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", { noremap = true, silent = true })
