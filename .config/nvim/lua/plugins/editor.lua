@@ -1,5 +1,9 @@
 return {
   {
+    "gregorias/coerce.nvim",
+    config = true,
+  },
+  {
     "NMAC427/guess-indent.nvim",
     lazy = false,
   },
