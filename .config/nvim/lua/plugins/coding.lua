@@ -1,7 +1,7 @@
 return {
   {
     -- add options to mini.ai
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     opts = {
       custom_textobjects = {
         -- port of kana/vim-textobj-entire to mini.ai
@@ -48,5 +48,19 @@ return {
         bicep = "// %s",
       },
     },
+  },
+  {
+    "wojciech-kulik/xcodebuild.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-neo-tree/neo-tree.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-treesitter/nvim-treesitter", -- (optional) for Quick tests support
+    },
+    config = function()
+      require("xcodebuild").setup({
+        -- put some options here or leave it empty to use default settings
+      })
+    end,
   },
 }

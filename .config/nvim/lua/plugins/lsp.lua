@@ -46,7 +46,17 @@ return {
             },
           },
         },
-        sourcekit = {},
+        sourcekit = {
+          cmd = {
+            vim.trim(vim.fn.system("xcrun -f sourcekit-lsp")),
+          },
+        },
+        tsserver = {
+          enabled = true,
+        },
+        ts_ls = {
+          enabled = true,
+        },
       },
     },
   },

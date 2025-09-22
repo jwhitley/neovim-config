@@ -92,7 +92,7 @@ return {
   },
   {
     -- disable mini.surround, which uses a weird non-textobject model ...
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     enabled = false,
   },
 }

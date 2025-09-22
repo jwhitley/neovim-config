@@ -1,22 +1,24 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "RRethy/nvim-treesitter-textsubjects",
-      config = function()
-        require("nvim-treesitter.configs").setup({
-          textsubjects = {
-            enable = true,
-            prev_selection = ",", -- (Optional) keymap to select the previous selection
-            keymaps = {
-              ["."] = "textsubjects-smart",
-              [";"] = "textsubjects-container-outer",
-              ["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (classes, functions, etc.)" },
-            },
-          },
-        })
-      end,
-    },
+    -- Disabled pending nvim-treesitter-textsubjects suppport for nvim-treesitter main branch
+    -- see discussion at https://github.com/RRethy/nvim-treesitter-textsubjects/issues/52
+    -- dependencies = {
+    --   "RRethy/nvim-treesitter-textsubjects",
+    --   config = function()
+    --     require("nvim-treesitter.configs").setup({
+    --       textsubjects = {
+    --         enable = true,
+    --         prev_selection = ",", -- (Optional) keymap to select the previous selection
+    --         keymaps = {
+    --           ["."] = "textsubjects-smart",
+    --           [";"] = "textsubjects-container-outer",
+    --           ["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (classes, functions, etc.)" },
+    --         },
+    --       },
+    --     })
+    --   end,
+    -- },
     opts = {
       ensure_installed = {
         "bicep",
